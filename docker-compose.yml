@@ -17,8 +17,8 @@ services:
 
   web:
     build: ./webapp
-    # Bu komut konteynerin kapanmasını engeller, böylece içine girip komut yazabiliriz.
-    command: tail -f /dev/null
+    # Konteyner açılır açılmaz Django sunucusunu başlatan komutu ekledik:
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./webapp:/code
     ports:
